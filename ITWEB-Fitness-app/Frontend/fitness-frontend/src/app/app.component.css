@@ -1,0 +1,30 @@
+/* setting background of navbar to transparent*/
+.topnav {
+  background-color: transparent;
+  overflow: hidden;
+  justify-content: right;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Glegoo", serif;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #004765;
+  color: white;
+}
