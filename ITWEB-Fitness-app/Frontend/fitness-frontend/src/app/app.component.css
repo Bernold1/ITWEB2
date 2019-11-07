@@ -1,6 +1,5 @@
 /* setting background of navbar to transparent*/
 .topnav {
-  background-color: transparent;
   overflow: hidden;
   justify-content: right;
 }

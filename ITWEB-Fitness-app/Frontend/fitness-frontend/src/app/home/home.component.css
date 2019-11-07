@@ -1,103 +1,116 @@
-body{
-    /* "Cinemagraph by reddit user u/Sun_Beams
+body {
+  /* "Cinemagraph by reddit user u/Sun_Beams
     Source stock video by Videvo." (gained permission for personal usage)*/
-    background-image: url('https://i.imgur.com/4tycOwy.gif');
-    background-size: cover;
-    font-family: Tahoma;
-    height: 100vh;
-    padding:0;
-    margin:0;
-    background-attachment: fixed;
+  background-image: url("https://i.imgur.com/4tycOwy.gif");
+  background-size: cover;
+  font-family: Tahoma;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-attachment: fixed;
 }
 
 .parent {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
 
-    grid-template-areas: 
+  grid-template-areas:
     ". . . . . ."
     ". div1 div1 div1 div1 ."
     ". div2 div2 div2 div2 ."
     ". . . . . .";
-    }
+}
 
-@media screen and (min-width:1000px){
-.parent {
+@media screen and (min-width: 1000px) {
+  .parent {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-auto-rows: minmax(100px, auto);
     grid-column-gap: 80px;
     grid-row-gap: 30px;
 
-    grid-template-areas: 
-    ". . . . . ."
-    ". . . . . ."
-    ". div1 div1 div2 div2 ."
-    ". div1 div1 div2 div2 ."
-    ". . . . . .";
-    }
+    grid-template-areas:
+      ". . . . . ."
+      ". . . . . ."
+      ". div1 div1 div2 div2 ."
+      ". div1 div1 div2 div2 ."
+      ". . . . . .";
+  }
 }
-    
+
 .div1 {
-    grid-area: div1;
-    }
+  grid-area: div1;
+}
 .div2 {
-    grid-area: div2;
-    } 
+  grid-area: div2;
+}
 
 .card {
-        /* Add shadows to create the "card" effect */
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-        border-radius: 2px; /* 5px rounded corners */
-        background: white;
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 4px; /* 5px rounded corners */
+  background: white;
 
-        margin-bottom: 12px;
-        margin-right: 20px;
-        
-        padding: 20px;
-        text-align: center;
-      }
+  margin-bottom: 12px;
+  margin-right: 20px;
 
-    .card-title{
-        font-family: 'Glegoo', serif;
-        font-weight: 700;
-        font-size: 24px;
-        color: #004562;
-        margin-bottom: 20px;
-        margin-top: 15px;
-    }
+  padding: 20px;
+  text-align: center;
+}
 
-    .card-body{
-        font-family: Tahoma;
-        font-size: 16px;
-        color: #5D6F7D;
-        padding-bottom: 40px;
-    }
-    
-    .card-link{
-        font-family: Tahoma;
-        font-size: 16px;
-        color: #004562;
-        padding-bottom: 40px;
-    }
-    a:visited { text-decoration: none; color:#004562; }
-    a:hover { text-decoration: none; color:#71A1B8; }
-    a:focus { text-decoration: none; color:#004562; }
-    a:hover, a:active { text-decoration: none; color:#004562 }
-      
-      /* On mouse-over, add a deeper shadow */
-      .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-      }
-      
-      /* Add some padding inside the card container */
-      .container {
-        padding: 2px 16px;
-      }
+.card-title {
+  font-family: "Glegoo", serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #004562;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.card-body {
+  font-family: Tahoma;
+  font-size: 16px;
+  color: #5d6f7d;
+  padding-bottom: 40px;
+}
+
+.card-link {
+  font-family: Tahoma;
+  font-size: 16px;
+  color: #004562;
+  padding-bottom: 40px;
+}
+a:visited {
+  text-decoration: none;
+  color: #004562;
+}
+a:hover {
+  text-decoration: none;
+  color: #71a1b8;
+}
+a:focus {
+  text-decoration: none;
+  color: #004562;
+}
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #004562;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
 
 /*Four card display for after using login*/
 /* .parent {
