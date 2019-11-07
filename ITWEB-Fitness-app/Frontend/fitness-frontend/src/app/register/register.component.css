@@ -98,3 +98,7 @@ mat-card-header {
   width: 100%;
   display: block;
 }
+
+mat-form-field {
+  font-family: Tahoma;
+}
