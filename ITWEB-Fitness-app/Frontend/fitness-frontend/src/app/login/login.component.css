@@ -42,9 +42,6 @@ body {
 .div1 {
   grid-area: div1;
 }
-.div2 {
-  grid-area: div2;
-}
 
 .card {
   /* Add shadows to create the "card" effect */
@@ -70,34 +67,9 @@ body {
 }
 
 .card-body {
-  font-family: Tahoma;
-  font-size: 16px;
+  font-family: "Comic Sans MS";
   color: #5d6f7d;
-  padding-bottom: 40px;
-}
-
-.card-link {
-  font-family: Tahoma;
-  font-size: 16px;
-  color: #004562;
-  padding-bottom: 40px;
-}
-a:visited {
-  text-decoration: none;
-  color: #004562;
-}
-a:hover {
-  text-decoration: none;
-  color: #71a1b8;
-}
-a:focus {
-  text-decoration: none;
-  color: #004562;
-}
-a:hover,
-a:active {
-  text-decoration: none;
-  color: #004562;
+  padding-bottom: 15px;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -117,6 +89,7 @@ a:active {
 
 .mat-stroked-button {
   border: 1px solid currentColor;
+  font-family: Tahoma;
   line-height: 54px;
   background: #fff7fa;
 }
@@ -125,4 +98,8 @@ mat-card-header {
   text-align: center;
   width: 100%;
   display: block;
+}
+
+mat-form-field {
+  font-family: Tahoma;
 }
