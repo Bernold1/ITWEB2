@@ -55,4 +55,25 @@ router.post("/login", async (req, res) => {
   //res.header("auth-token", token).send(token);
 });
 
+//We want to verify the token in the backend after login
+function verifyToken(req, res, next) {
+  if (!req.headers.authorization) {
+    return res.status(401).send("Unauthorized request");
+  }
+  let token = req.headers.authorization.split(" ")[1];
+  if (token === "null") {
+    return res.status(401).send("No token present");
+  }
+  let payload = jwt.verify(token, process.env.TOKEN_SECRET);
+  if (!payload) {
+    return res.status(401).send("Unauthorized request");
+  }
+  req.user._id = payload.subject;
+  next();
+}
+
+router.get("/members", verifyToken, (req, res) => {
+  res(user._id);
+});
+
 module.exports = router;
