@@ -16,6 +16,7 @@ import { MembersComponent } from "./members/members.component";
 import { AuthGuard } from "./authentication/guard/auth.guard";
 import { TokenInterceptorService } from "./authentication/service/token-interceptor.service";
 import { CreateWorkoutComponent } from './create-workout/create-workout.component';
+import { AllWorkoutsComponent } from './all-workouts/all-workouts.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CreateWorkoutComponent } from './create-workout/create-workout.componen
     LoginComponent,
     HomeComponent,
     MembersComponent,
-    CreateWorkoutComponent
+    CreateWorkoutComponent,
+    AllWorkoutsComponent
   ],
   imports: [
     BrowserModule,
