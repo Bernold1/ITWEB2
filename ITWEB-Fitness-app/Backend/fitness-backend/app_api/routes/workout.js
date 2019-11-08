@@ -5,13 +5,7 @@ const Workout = require("../models/Workout");
 router.post("/createworkout", async (req, res) => {
   const workout = new Workout({
     name: req.body.name,
-    exercises: req.body.exercises.map(exercise => ({
-      exerciseId: exercise._id,
-      exerciseName: exercise.name,
-      exerciseDes: exercise.description,
-      exerciseSet: exercise.set,
-      exerciseReps: exercise.reps
-    }))
+    exercises: req.body.exercises.map(exercise => new Exercise(exercise))
   });
   try {
     console.log(req.body.exercises);
@@ -21,5 +15,7 @@ router.post("/createworkout", async (req, res) => {
     res.status(400).send(err);
   }
 });
+
+router.get("/allworks", async (req, res) => {});
 
 module.exports = router;
