@@ -7,16 +7,15 @@ import { CommonModule } from "@angular/common";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { RegisterComponent } from "./register/register.component";
-import { LoginComponent } from "./login/login.component";
-import { HomeComponent } from "./home/home.component";
+import { RegisterComponent } from "./components/register/register.component";
+import { LoginComponent } from "./components/login/login.component";
+import { HomeComponent } from "./components/home/home.component";
 import { AngularMaterialModule } from "./angular-material.module";
 import { AuthService } from "./authentication/service/auth.service";
-import { MembersComponent } from "./members/members.component";
 import { AuthGuard } from "./authentication/guard/auth.guard";
 import { TokenInterceptorService } from "./authentication/service/token-interceptor.service";
-import { CreateWorkoutComponent } from './create-workout/create-workout.component';
-import { AllWorkoutsComponent } from './all-workouts/all-workouts.component';
+import { CreateWorkoutComponent } from "./components/create-workout/create-workout.component";
+import { AllWorkoutsComponent } from "./components/all-workouts/all-workouts.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { AllWorkoutsComponent } from './all-workouts/all-workouts.component';
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    MembersComponent,
     CreateWorkoutComponent,
     AllWorkoutsComponent
   ],

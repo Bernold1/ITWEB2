@@ -1,0 +1,70 @@
+<!--<form [formGroup]="formGroup">-->
+
+<!--<div class="wrapper">-->
+
+<!--<h1 mat-dialog-title>Create Post</h1>-->
+
+<!--<mat-dialog-content>-->
+
+<!--<mat-tab-group #tabGroup-->
+<!--disableRipple="true"-->
+<!--(selectedIndexChange)="selectedIndexChange($event)"-->
+<!--[dynamicHeight]="true">-->
+
+<!--<mat-tab *ngFor="let tab of postService.tabs; let i = index">-->
+
+<!--<ng-template mat-tab-label>-->
+
+<!--<app-post-tab-label [label]="tab.label"-->
+<!--[autoFocus]="tab.autoFocus"-->
+<!--[index]="i"></app-post-tab-label>-->
+
+<!--</ng-template>-->
+
+<!--</mat-tab>-->
+
+<!--</mat-tab-group>-->
+
+<!--<monaco-editor theme="vs-dark"-->
+<!--(fileChange)="editorChange($event)"-->
+<!--[options]="monacoOptions"></monaco-editor>-->
+
+<!--</mat-dialog-content>-->
+
+<!--<mat-dialog-actions>-->
+
+<!--<div class="left">-->
+
+<!--<mat-form-field>-->
+
+<!--<mat-select formControlName="visibility"-->
+<!--placeholder="Visibility">-->
+
+<!--<mat-option value="public" selected>Public</mat-option>-->
+<!--<mat-option value="private">Private</mat-option>-->
+
+<!--</mat-select>-->
+
+<!--</mat-form-field>-->
+
+<!--</div>-->
+
+<!--<div class="right">-->
+
+<!--<button mat-button mat-dialog-close>Cancel</button>-->
+
+<!--<button mat-button-->
+<!--(click)="post()"-->
+<!--cdkFocusInitial>-->
+
+<!--Post-->
+
+<!--</button>-->
+
+<!--</div>-->
+
+<!--</mat-dialog-actions>-->
+
+<!--</div>-->
+
+<!--</form>-->

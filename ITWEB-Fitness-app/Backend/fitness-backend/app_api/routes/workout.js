@@ -16,6 +16,9 @@ router.post("/createworkout", async (req, res) => {
   }
 });
 
-router.get("/allworks", async (req, res) => {});
+router.get("/allworkouts", async (req, res) => {
+  const allWorkouts = await Workout.find();
+  res.send(allWorkouts);
+});
 
 module.exports = router;

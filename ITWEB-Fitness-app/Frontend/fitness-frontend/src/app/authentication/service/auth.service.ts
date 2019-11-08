@@ -5,6 +5,8 @@ import { Router } from "@angular/router";
 @Injectable({
   providedIn: "root"
 })
+//Most stuff for authentication is inspired by following youtube playlist(only angular parts)
+// https://www.youtube.com/watch?v=ozXGkqpzo_A&list=PLC3y8-rFHvwg2RBz6UplKTGIXREj9dV0G&index=1
 export class AuthService {
   //property to store backend api URL
   private _registerURL = "http://localhost:3000/api/user/register";

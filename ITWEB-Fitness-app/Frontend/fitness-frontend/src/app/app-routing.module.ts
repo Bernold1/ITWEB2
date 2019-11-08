@@ -1,10 +1,10 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 //Importing components
-import { LoginComponent } from "./login/login.component";
-import { RegisterComponent } from "./register/register.component";
-import { HomeComponent } from "./home/home.component";
-import { CreateWorkoutComponent } from "./create-workout/create-workout.component";
+import { LoginComponent } from "./components/login/login.component";
+import { RegisterComponent } from "./components/register/register.component";
+import { HomeComponent } from "./components/home/home.component";
+import { CreateWorkoutComponent } from "./components/create-workout/create-workout.component";
 import { AuthGuard } from "./authentication/guard/auth.guard";
 
 const routes: Routes = [
