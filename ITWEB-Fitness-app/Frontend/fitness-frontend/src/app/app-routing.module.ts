@@ -4,14 +4,19 @@ import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { HomeComponent } from "./home/home.component";
-import { MembersComponent } from "./members/members.component";
+import { CreateWorkoutComponent } from "./create-workout/create-workout.component";
+import { AuthGuard } from "./authentication/guard/auth.guard";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "members", component: MembersComponent }
+  {
+    path: "createworkout",
+    component: CreateWorkoutComponent,
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({

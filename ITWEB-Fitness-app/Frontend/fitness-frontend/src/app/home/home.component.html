@@ -1,7 +1,7 @@
 <body>
   <div class="parent">
     <div class="div1">
-      <div class="card">
+      <div *ngIf="!_authService.isLoggedIn()" class="card">
         <div class="card-title">Login</div>
         <div class="card-body">
           Returning user? Click here to log in to your account<br /><br />
@@ -9,6 +9,18 @@
         <div class="card-link">
           <a routerLink="/login">
             <i class="fas fa-chevron-circle-right"></i> Click here to log in
+          </a>
+        </div>
+      </div>
+      <div *ngIf="_authService.isLoggedIn()" class="card">
+        <div class="card-title">Create workout</div>
+        <div class="card-body">
+          Welcome back! Click here to create a new workout<br /><br />
+        </div>
+        <div class="card-link">
+          <a routerLink="/login">
+            <i class="fas fa-chevron-circle-right"></i> Click here to create a
+            new workout
           </a>
         </div>
       </div>

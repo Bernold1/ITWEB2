@@ -1,8 +1,11 @@
 <mat-toolbar color="primary" style="height: 40px;" class="topnav">
   <div>
     <a routerLink="/home" class="active">Home</a>
-    <a routerLink="/register">Register</a>
-    <a routerLink="/login">Login</a>
+    <a *ngIf="!_authService.isLoggedIn()" routerLink="/register">Register</a>
+    <a *ngIf="!_authService.isLoggedIn()" routerLink="/login">Login</a>
+    <a *ngIf="_authService.isLoggedIn()" (click)="_authService.logOut()"
+      >Logout</a
+    >
   </div>
 </mat-toolbar>
 <router-outlet></router-outlet>
