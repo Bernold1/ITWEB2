@@ -4,7 +4,7 @@ const Exercise = require("./Exercise").schema;
 //inspired by https://mongoosejs.com/docs/populate.html
 
 const workoutSchema = Schema({
-  workoutname: { type: String, required: true },
+  workoutName: { type: String, required: true },
   date: { type: Date, default: Date.now },
   exercises: [Exercise]
 });
