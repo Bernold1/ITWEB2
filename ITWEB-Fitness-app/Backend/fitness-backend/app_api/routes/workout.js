@@ -4,7 +4,7 @@ const Workout = require("../models/Workout");
 
 router.post("/createworkout", async (req, res) => {
   const workout = new Workout({
-    name: req.body.name,
+    workoutName: req.body.workoutName,
     exercises: req.body.exercises.map(exercise => new Exercise(exercise))
   });
   try {
@@ -18,6 +18,7 @@ router.post("/createworkout", async (req, res) => {
 
 router.get("/allworkouts", async (req, res) => {
   const allWorkouts = await Workout.find();
+  console.log(allWorkouts[0].exercises[0]);
   res.send(allWorkouts);
 });
 
