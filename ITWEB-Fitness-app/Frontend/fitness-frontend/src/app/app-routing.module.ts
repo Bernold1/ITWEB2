@@ -5,6 +5,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { HomeComponent } from "./components/home/home.component";
 import { CreateWorkoutComponent } from "./components/create-workout/create-workout.component";
+import { AllWorkoutsComponent } from "./components/all-workouts/all-workouts.component";
 import { AuthGuard } from "./authentication/guard/auth.guard";
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
     path: "createworkout",
     component: CreateWorkoutComponent,
     canActivate: [AuthGuard]
-  }
+  },
+  { path: "allworkouts", component: AllWorkoutsComponent }
 ];
 
 @NgModule({

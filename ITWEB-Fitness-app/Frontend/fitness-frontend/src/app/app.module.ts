@@ -16,6 +16,7 @@ import { AuthGuard } from "./authentication/guard/auth.guard";
 import { TokenInterceptorService } from "./authentication/service/token-interceptor.service";
 import { CreateWorkoutComponent } from "./components/create-workout/create-workout.component";
 import { AllWorkoutsComponent } from "./components/all-workouts/all-workouts.component";
+import { WorkoutService } from "./other-services/workout.service";
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AllWorkoutsComponent } from "./components/all-workouts/all-workouts.com
     CommonModule
   ],
   providers: [
+    WorkoutService,
     AuthService,
     AuthGuard,
     {

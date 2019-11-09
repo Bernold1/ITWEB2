@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormControl, FormGroup, FormArray } from "@angular/forms";
+import { Subscription } from "rxjs";
+import { WorkoutService } from "src/app/other-services/workout.service";
 
 @Component({
   selector: "app-create-workout",
@@ -7,10 +9,37 @@ import { FormControl, FormGroup } from "@angular/forms";
   styleUrls: ["./create-workout.component.css"]
 })
 export class CreateWorkoutComponent implements OnInit {
-  public formGroup = new FormGroup({
-    visibility: new FormControl("public")
-  });
-  constructor() {}
+  workoutForm: FormGroup;
+  workoutFormSub: Subscription;
 
-  ngOnInit() {}
+  constructor(private workoutService: WorkoutService) {}
+
+  ngOnInit() {
+    this.workoutForm = new FormGroup({
+      workoutName: new FormControl(""),
+      exercises: new FormArray([this.initExercise()])
+    });
+  }
+
+  initExercise() {
+    return new FormGroup({
+      exerciseName: new FormControl(""),
+      description: new FormControl(""),
+      set: new FormControl(""),
+      reps: new FormControl("")
+    });
+  }
+
+  addExercise() {
+    const control = <FormArray>this.workoutForm.get("exercises");
+    control.push(this.initExercise());
+  }
+
+  getExercises(form) {
+    return form.controls.exercises.controls;
+  }
+
+  onSubmit(form) {
+    //Gonna move this to the service
+  }
 }

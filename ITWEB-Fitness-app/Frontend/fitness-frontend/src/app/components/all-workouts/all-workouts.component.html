@@ -1,1 +1,14 @@
-<p>all-workouts works!</p>
+<body>
+  <div class="parent">
+    <div class="div1">
+      <mat-card *ngFor="let workout of workouts">
+        <mat-card-title>
+          {{ workout.name }}
+        </mat-card-title>
+        <mat-card-content>
+          {{ workout.exercises }}
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</body>
