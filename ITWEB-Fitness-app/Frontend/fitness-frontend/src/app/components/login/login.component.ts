@@ -9,7 +9,7 @@ import { FormControl, Validators } from "@angular/forms";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  loginUserData = {};
+  loginUserData: UserLogin = { email: "", password: "" };
   email = new FormControl("", [Validators.required, Validators.email]);
 
   constructor(private _auth: AuthService, private _router: Router) {}

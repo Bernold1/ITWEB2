@@ -7,14 +7,15 @@ import { AuthService } from "../../authentication/service/auth.service";
   styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent implements OnInit {
-  registerUserData = {};
+  registerUserData: User = { name: "", email: "", password: "" };
   constructor(private _auth: AuthService) {}
 
   ngOnInit() {}
 
   registerUser() {
-    this._auth
-      .registerUser(this.registerUserData)
-      .subscribe(res => console.log(res), err => console.log(err));
+    this._auth.registerUser(this.registerUserData).subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    );
   }
 }

@@ -1,75 +1,4 @@
 <!-- inspired by https://stackblitz.com/edit/deep-nested-reactive-form?file=app%2Fapp.component.html -->
-<!-- <body>
-  <div class="parent">
-    <div class="div1">
-      <div class="card">
-        <div class="login-wrapper">
-          <mat-card>
-            <mat-card-header>
-              <mat-card-title class="card-title">New workout</mat-card-title>
-            </mat-card-header>
-            <form
-              [formGroup]="workoutForm"
-              novalidate
-              (ngSubmit)="onSubmit(workoutForm)"
-            >
-              <mat-card-content>
-                <mat-form-field class="full-width">
-                  <input type="text" formControlName="workoutName" required />
-                </mat-form-field>
-              </mat-card-content>
-              <div>
-                Workout Name:<input
-                  type="text"
-                  formControlName="workoutName"
-                  required
-                />
-              </div>
-              <div formArrayName="exercises">
-                <div
-                  class="exercise-container"
-                  *ngFor="
-                    let exercise of getExercises(workoutForm);
-                    let i = index
-                  "
-                >
-                  <div class="card" [formGroupName]="i">
-                    <h4 class="card-title">Exercise details</h4>
-                    <div>
-                      exercise name:<input
-                        type="text"
-                        formControlName="exerciseName"
-                        required
-                      />
-                    </div>
-                    <div>
-                      Your description<input
-                        type="text"
-                        formControlName="description"
-                        required
-                      />
-                    </div>
-                    <div>
-                      set:<input type="text" formControlName="set" required />
-                    </div>
-                    <div>
-                      reps:<input type="text" formControlName="reps" required />
-                    </div>
-                  </div>
-                </div>
-                <button (click)="addExercise()" class="point">
-                  Add another exercise
-                </button>
-              </div>
-              <button type="submit">Submit</button>
-            </form>
-          </mat-card>
-        </div>
-      </div>
-    </div>
-  </div>
-</body> -->
-
 <body>
   <div class="parent">
     <div class="div1">
@@ -78,7 +7,7 @@
           <form
             [formGroup]="workoutForm"
             novalidate
-            (ngSubmit)="onSubmit(workoutForm)"
+            (ngSubmit)="submitWorkout(workoutForm)"
           >
             <mat-card>
               <mat-card-header>
@@ -90,9 +19,8 @@
               <mat-card-content>
                 <mat-form-field class="full-width">
                   <input
-                    input
-                    type="text"
                     formControlName="workoutName"
+                    type="text"
                     matInput
                     placeholder="Your workout name"
                     name="workoutName"
@@ -109,6 +37,7 @@
                   >Exercise details</mat-card-title
                 >
               </mat-card-header>
+              <!-- need i incase we want to implement removal of exercises in the future -->
               <div
                 class="exercise-container"
                 *ngFor="
@@ -149,7 +78,7 @@
                     <input
                       input
                       type="text"
-                      formControlName="set"
+                      formControlName="sets"
                       matInput
                       placeholder="exercise sets"
                       name="set"
@@ -187,6 +116,7 @@
               mat-stroked-button
               class="btn-block"
               type="submit"
+              routerLink="/allworkouts"
             >
               Submit
             </button>

@@ -2,11 +2,18 @@
   <div class="parent">
     <div class="div1">
       <mat-card *ngFor="let workout of workouts">
-        <mat-card-title>
-          {{ workout.name }}
+        <mat-card-title class="card-title">
+          {{ workout.workoutName }}
         </mat-card-title>
-        <mat-card-content>
-          {{ workout.exercises }}
+        <mat-card-content
+          class="card-body"
+          *ngFor="let exercise of workout.exercises; let i = index"
+        >
+          <b>Exercise {{ i + 1 }}</b> <br />
+          <b>name:</b>&nbsp; {{ exercise.exerciseName }} <br />
+          <b>description:</b>&nbsp; {{ exercise.description }}<br />
+          <b> sets:</b>&nbsp;{{ exercise.sets }}<br />
+          <b>reps:</b>&nbsp;{{ exercise.reps }}
         </mat-card-content>
       </mat-card>
     </div>

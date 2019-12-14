@@ -9,5 +9,5 @@ import { AuthService } from "./authentication/service/auth.service";
 export class AppComponent {
   title = "Workout routines";
 
-  constructor(private _authService: AuthService) {}
+  constructor(public _authService: AuthService) {}
 }

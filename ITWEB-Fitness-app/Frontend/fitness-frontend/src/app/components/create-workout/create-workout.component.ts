@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, FormArray } from "@angular/forms";
-import { Subscription } from "rxjs";
+import { FormControl, FormGroup, FormArray, FormBuilder } from "@angular/forms";
 import { WorkoutService } from "src/app/other-services/workout.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-create-workout",
@@ -10,36 +10,39 @@ import { WorkoutService } from "src/app/other-services/workout.service";
 })
 export class CreateWorkoutComponent implements OnInit {
   workoutForm: FormGroup;
-  workoutFormSub: Subscription;
 
-  constructor(private workoutService: WorkoutService) {}
-
-  ngOnInit() {
-    this.workoutForm = new FormGroup({
-      workoutName: new FormControl(""),
-      exercises: new FormArray([this.initExercise()])
+  constructor(
+    private workoutService: WorkoutService,
+    private fb: FormBuilder,
+    private _router: Router
+  ) {
+    this.workoutForm = this.fb.group({
+      workoutName: "",
+      exercises: this.fb.array([])
     });
   }
 
-  initExercise() {
-    return new FormGroup({
-      exerciseName: new FormControl(""),
-      description: new FormControl(""),
-      set: new FormControl(""),
-      reps: new FormControl("")
-    });
-  }
+  ngOnInit() {}
+
+  initExercise() {}
 
   addExercise() {
-    const control = <FormArray>this.workoutForm.get("exercises");
-    control.push(this.initExercise());
+    const details = this.workoutForm.controls.exercises as FormArray;
+    details.push(
+      this.fb.group({
+        exerciseName: "",
+        description: "",
+        sets: "",
+        reps: ""
+      })
+    );
   }
 
   getExercises(form) {
     return form.controls.exercises.controls;
   }
 
-  onSubmit(form) {
-    //Gonna move this to the service
+  submitWorkout(form) {
+    console.log(this.workoutForm);
   }
 }
